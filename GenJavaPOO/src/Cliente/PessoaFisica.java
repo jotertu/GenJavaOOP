@@ -30,7 +30,7 @@ public class PessoaFisica extends Cliente {
         return cpfFormatado.substring(0, 3) + "." + cpfFormatado.substring(3, 6) + "." + cpfFormatado.substring(6, 9) + "-" + cpfFormatado.substring(9);
     }
     
-    public void scanner() {
+    public void visualizar() {
         System.out.println("Dados da Pessoa Física:");
         System.out.println("Nome: " + getNome());
         System.out.println("Endereço: " + getEndereco());

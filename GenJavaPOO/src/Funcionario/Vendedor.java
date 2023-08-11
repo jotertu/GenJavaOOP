@@ -45,7 +45,7 @@ public class Vendedor extends Funcionario {
     }
 
 
-    public void scanner() {
+    public void visualizar() {
         System.out.println("Dados do Vendedor:");
         System.out.println("Nome: " + getNome());
         System.out.println("CPF: " + formataCpf());

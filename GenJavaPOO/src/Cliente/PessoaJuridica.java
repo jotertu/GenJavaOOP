@@ -30,7 +30,7 @@ public class PessoaJuridica extends Cliente {
         return cnpjFormatado.substring(0, 2) + "." + cnpjFormatado.substring(2, 5) + "." + cnpjFormatado.substring(5, 8) + "/" + cnpjFormatado.substring(8, 12) + "-" + cnpjFormatado.substring(12);
     }
     
-    public void scanner() {
+    public void visualizar() {
         System.out.println("Dados da Pessoa Jurídica:");
         System.out.println("Nome da empresa: " + getNome());
         System.out.println("Endereço: " + getEndereco());

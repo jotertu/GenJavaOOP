@@ -34,7 +34,7 @@ public class Gerente extends Funcionario {
         System.out.println("\n******************************************");
     }
 
-    public void scanner() {
+    public void visualizar() {
     	System.out.println();
     	System.out.println("Informações do Gerente: ");
         System.out.println("Nome: " + getNome());
@@ -42,7 +42,7 @@ public class Gerente extends Funcionario {
         System.out.println("Setor: " + getSetor());
         System.out.println("Salário Antigo: " + formatarMoeda(salarioAntigo));
         System.out.println("Valor de Produção: " + formatarMoeda(valorProducao));
-        System.out.println("Comissão (sem %) : " + comissao);
+        System.out.println("Comissão (sem %) : " + getComissao());
         System.out.println();
         System.out.println("******************************************");
         validarCpf();

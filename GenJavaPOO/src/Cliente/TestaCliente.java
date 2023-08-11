@@ -10,13 +10,13 @@ public class TestaCliente {
         PessoaJuridica pessoaJuridica1 = new PessoaJuridica("Técnlogia de info. LTDA", "Av. Samuel Tavares", "15432112", 11987612345L, "1234567800010");
         PessoaJuridica pessoaJuridica2 = new PessoaJuridica("Unhas e cabelos", "Av. Francisco de Sá", "19871234", 11123498765L, "98765432000102");
 
-        pessoaFisica1.scanner();
+        pessoaFisica1.visualizar();
         System.out.println();
-        pessoaFisica2.scanner();
+        pessoaFisica2.visualizar();
         System.out.println();
-        pessoaJuridica1.scanner();
+        pessoaJuridica1.visualizar();
         System.out.println();
-        pessoaJuridica2.scanner();
+        pessoaJuridica2.visualizar();
         
 	}
 
