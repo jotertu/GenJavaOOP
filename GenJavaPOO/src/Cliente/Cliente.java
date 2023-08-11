@@ -18,21 +18,44 @@ package Cliente;
  * Crie a Classe TestaCliente no mesmo pacote da Classe Cliente, contendo o Método 
  * main() e instancie 2 Objetos da Classe Cliente;
  * Utilize o Método visualizar() para exibir os dados dos 2 Objetos Instanciados.
+ * 
+ * Exercicio 02
+ * 
+ * Crie a Classe PessoaFisica como uma herança da Classe Cliente e defina pelo
+ * menos 1 Atributo relevante, a pessoa física, a sua escolha;
+ * Lembre-se de escolher Atributos que descrevem características específicas e
+ * exclusivas de uma pessoa física;
+ * Crie o Método Construtor com parâmetros na Classe PessoaFisica;
+ * Crie os Métodos Get e Set para todos os Atributos da Classe PessoaFisica;
+ * Crie o Método visualizar() na Classe PessoaFisica, que consiga exibir todos os
+ * dados do Objeto;
+ * Instancie 2 Objetos da Classe PessoaFisica na Classe TestaCliente;
+ * Utilize o Método visualizar() para exibir os dados dos 2 Objetos Instanciados.
+ * Crie a Classe PessoaJuridica como uma herança da Classe Cliente e defina pelo
+ * menos 1 Atributo relevante, a pessoa jurídica, a sua escolha;
+ * Lembre-se de escolher Atributos que descrevam características específicas e
+ * exclusivas de uma pessoa jurídica;
+ * Crie o Método Construtor com parâmetros na Classe PessoaJuridica;
+ * Crie os Métodos Get e Set para todos os Atributos da Classe PessoaJuridica;
+ * Crie o Método visualizar() na Classe PessoaJuridica, que consiga exibir todos os
+ * dados do Objeto;
+ * Instancie 2 Objetos da Classe PessoaJuridica na Classe TestaCliente;
+ * Utilize o Método visualizar() para exibir os dados dos 2 Objetos Instanciados.
+ * 
  */
+
 
 public class Cliente {
     private String nome;
     private String endereco;
     private String cep;
-    private long cpf;
-    private long rg;
-
-    public Cliente(String nome, String endereco, String cep, long cpf, long rg) {
+    private long telefone;
+    
+    public Cliente(String nome, String endereco, String cep, long telefone) {
         this.nome = nome;
         this.endereco = endereco;
         this.cep = cep;
-        this.cpf = cpf;
-        this.rg = rg;
+        this.telefone = telefone;
     }
 
     public String getNome() {
@@ -59,21 +82,21 @@ public class Cliente {
         this.cep = cep;
     }
 
-    public long getCpf() {
-        return cpf;
+    public long getTelefone() {
+        return telefone;
     }
 
-    public void setCpf(long cpf) {
-        this.cpf = cpf;
+    public void setTelefone(long telefone) {
+        this.telefone = telefone;
     }
-
-    public long getRg() {
-        return rg;
-    }
-
-    public void setRg(long rg) {
-        this.rg = rg;
-    }
+    
+    public void validarCep() {
+		if (getCep().length() != 8) {
+			System.out.println("\n--CEP Inválido!!!");
+		} else {
+			System.out.println("\n--CEP Válido!!!");
+		}
+	}
 
     public String formataCep() {
         String parte1 = cep.substring(0, 5);
@@ -81,19 +104,18 @@ public class Cliente {
 
         return parte1 + "-" + parte2;
     }
-
-    public String formataCpf() {
-        String cpfFormatado = String.format("%011d", cpf);
-        return cpfFormatado.substring(0, 3) + "." + cpfFormatado.substring(3, 6) + "." + cpfFormatado.substring(6, 9) + "-" + cpfFormatado.substring(9);
-    }
-
-    public String formataRg() {
-        String rgFormatado = String.format("%09d", rg);
-        return rgFormatado.substring(0, 2) + "." + rgFormatado.substring(2, 5) + "." + rgFormatado.substring(5, 8) + "-" + rgFormatado.substring(8);
+    
+    
+    public String formataTelefone() {
+        String telefoneStr = String.valueOf(telefone);
+        String parte1 = telefoneStr.substring(0, 2);
+        String parte2 = telefoneStr.substring(2, 7);
+        String parte3 = telefoneStr.substring(7, 11);
+        
+        return parte1 + "-" + parte2 + "-" + parte3;
     }
 
     public void scanner() {
-        System.out.println("Nome do usuário: " + nome + "\nEndereço: " + endereco + "\nCEP: " + formataCep() + "\nCPF: " + formataCpf() + "\nRG: " + formataRg());
-        System.out.println();
+    	
     }
 }

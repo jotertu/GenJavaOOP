@@ -4,14 +4,22 @@ public class TestaFuncionario {
 
     public static void main(String[] args) {
     	
-    	Funcionario[] list = new Funcionario[3];
+    	Gerente gerente1 = new Gerente("Maria", "98765432109", "Gerência", 4500.00, 15000.00, 10.0);
+    	Gerente gerente2 = new Gerente("Joao", "112345678910", "Gerência", 4500.00, 13000.00, 17.0);
     	
-        list[0] = new Funcionario("João", "Técnico em Informática", "Bradesco", "Cidade Tiradentes", "São Paulo", 14885110L, 620L);
-        list[1] = new Funcionario("Gabriel", "Auxiliar Administrativo", "Banco do Brasil", "São Matheus", "São Paulo", 15452050L, 8550L);
-        list[2] = new Funcionario("Vinicius", "Auxiliar de Logística", "Caixa", "Baixada Santista", "Santos", 32344320L, 8780L);
-        
-        for(Funcionario run : list) {
-        	run.scanner();
-        }
+    	gerente1.scanner();
+    	gerente1.calcularValorArtigo();
+
+    	gerente2.scanner();
+    	gerente2.calcularValorArtigo();
+    	
+    	Vendedor vendedor1 = new Vendedor("Pedro", "22233344455", "Vendas", 3000.00, 6000, 5.0, 500.00);
+    	Vendedor vendedor2 = new Vendedor("Ana", "133344455566", "Vendas", 3000.00, 3200, 5.0, 900.00);
+    	
+    	vendedor1.scanner();
+    	vendedor1.calcularValorComDesconto();
+    	
+    	vendedor2.scanner();
+    	vendedor2.calcularValorComDesconto();
     }
 }
